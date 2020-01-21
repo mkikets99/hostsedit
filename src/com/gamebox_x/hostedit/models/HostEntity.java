@@ -40,6 +40,6 @@ public class HostEntity {
 	
 	@Override
 	public String toString() {
-		return null;
+		return ((disabled)? "#\t": " \t" ) + ipaddress + "\t" + webaddress; 
 	}
 }
