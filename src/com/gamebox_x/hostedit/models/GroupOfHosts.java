@@ -11,7 +11,7 @@ public class GroupOfHosts {
 	private String name;
 	private String filePath;
 	private LocalDateTime lastTimeEdit;
-	private String headerString = "# Copyright (c) 1993-2009 Microsoft Corp.\n" + 
+	private String localhost = "# Copyright (c) 1993-2009 Microsoft Corp.\n" + 
 			"#\n" + 
 			"# This is a sample HOSTS file used by Microsoft TCP/IP for Windows.\n" + 
 			"#\n" + 
@@ -37,7 +37,7 @@ public class GroupOfHosts {
 		OsCheck.OSType os = OsCheck.getOperatingSystemType();
 		switch (os) {
 		case Windows:
-			headerString = headerString.replace("\n", "\r\n");
+			localhost = localhost.replace("\n", "\r\n");
 			break;
 
 		default:
@@ -49,7 +49,7 @@ public class GroupOfHosts {
 		if(!new File(File).exists()) {
 			try {
 				PrintWriter pw = new PrintWriter(new File(File));
-				pw.write(headerString);
+				pw.write(localhost);
 				pw.close();
 			} catch (FileNotFoundException e) {
 				// TODO Auto-generated catch block
